@@ -224,9 +224,9 @@ function insertArticlesIntoWomen() { // diynamically insert articles into women 
                 ul.innerHTML += "<li>" +
                     "<img id='article-card' name=" +
                     genderList[i].get_id() +
-                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men1.jpg'>" +
+                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/slika7.png'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
-                    "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
+                    "<p id='cardPrice'>" + CURRENCY_EURO + genderList[i].get_price() + "</p>" +
                     "</li>";
             } else { // create new row if "i" is equal to card per row
 
@@ -242,9 +242,9 @@ function insertArticlesIntoWomen() { // diynamically insert articles into women 
                 newUl.innerHTML += "<li>" +
                     "<img id='article-card' name=" +
                     genderList[i].get_id() +
-                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men1.jpg'>" +
+                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/slika7.png'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
-                    "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
+                    "<p id='cardPrice'>" + CURRENCY_EURO + genderList[i].get_price() + "</p>" +
                     "</li>";
 
                 // declare new ul and div as default one to be executed on next iteration
@@ -281,7 +281,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 ul.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men1.jpg'>" +
+                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men4.jpg'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -297,7 +297,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 newUl.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men1.jpg'>" +
+                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men4.jpg'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -336,7 +336,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 ul.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/men1.jpg'>" +
+                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/slika10.png'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -352,7 +352,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 newUl.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/men1.jpg'>" +
+                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/slika10.png'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -441,27 +441,12 @@ function articlePreview(articleId) { // dynamically insert elements with specifi
     cartForm.setAttribute("id", "cart-form");
     infoContainer.appendChild(cartForm);
 
-    // quantity label
-    let quantityLabel = document.createElement("label");
-    quantityLabel.setAttribute("id", "article-amount-label");
-    quantityLabel.innerHTML = "Quantity";
-    document.getElementById("cart-form").appendChild(quantityLabel);
-
-    // article quantity in cart form
-    let quantity = document.createElement("select");
-    quantity.setAttribute("id", "article-amount");
-    for (let i = 1; i < article.get_quantity() + 1; i++) {
-        quantity.innerHTML += "<option value='" + i + "'>" + i + "</option>";
-    }
-
-    document.getElementById("cart-form").appendChild(quantity);
-
     // article add to cart button in cart form
     let submit = document.createElement("BUTTON");
     submit.setAttribute("id", "article-submit-btn");
     submit.setAttribute("type", "button");
     submit.setAttribute("onclick", "handleCartList(" + article.get_id() + ")")
-    submit.innerHTML = '<img src="img/icon/cart1.png "><span>Add to cart</span>';
+    submit.innerHTML = '<span>Add to Cart</span>';
     document.getElementById("cart-form").appendChild(submit);
 
     // div containing id info
