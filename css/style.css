@@ -522,6 +522,7 @@
         z-index: 1;
         width: 550px;
         max-height: 610px;
+        object-fit: cover;
     }
     
     .thumb {
@@ -532,21 +533,67 @@
         max-width: 100%;
     }
     
-    a:hover .thumb {
-        -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    }
-    
     a:hover .big {
         float: none;
-        top: 10px;
+        top: -20px;
         right: 34%;
         width: 550px;
         max-height: 610px;
-        top: -20px;
         z-index: 2;
-        overflow: hidden;
+        object-fit: cover;
+        /* crop image to fit */
+    }
+    
+    .recommender-container {
+        position: relative;
+        margin: 100px auto;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .recommender-card:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        font-family: Inter;
+        width: 25%;
+    }
+    
+    .recommender-card:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+        max-height: 600px;
+        margin: 5px;
+    }
+    
+    .recommender-card:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 600px;
+        width: 25%;
+        margin: 5px;
+    }
+    
+    .recommender-card:nth-child(4) {
+        max-height: 600px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 25%;
+        margin: 5px;
+    }
+    
+    .recommender-card img {
+        max-width: 300px;
+        min-height: 400px;
+        max-height: 400px;
+    }
+    
+    .recommender-card #cardHeader {
+        margin-top: 15px;
     }
     /* --------- END OF ARTICLE CONTAINER ------- */
     /* --------------- CART CONTAINER ----------- */
