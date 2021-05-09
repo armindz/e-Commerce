@@ -55,19 +55,41 @@
 
 
         <div class="customer-checkout-mini" id="checkout-mini">
+            <button id="minimize-mini-cart" onclick="minimizeMiniCart()">x</button>
             <h3>Cart</h3>
             <div class="cart-articles" id="cart-article-cards-mini">
 
             </div>
-
+            <!-- mini-checkout list (Injected by JS)-->
             <div class="cart-checkout" id="checkout-cart-mini">
-                <p>TOTAL:</p>
-                <p id="total-price"></p>
-                <!-- injected by JS-->
-            </div>
+                <div class="subtotal-row">
 
-            <!-- /checkout list (Injected by JS)-->
+                    <p style="font-size:12px;">Subtotal:</p>
+                    <p id="subtotal">
+                        <!-- injected by JS-->
+                    </p>
+                </div>
+
+                <div class="taxes-row">
+
+                    <p style="font-size:12px;">Taxes:</p>
+                    <p id="taxes">
+                        <!-- injected by JS-->
+                    </p>
+                </div>
+
+                <p>Total:</p>
+                <p id="total-price">
+                    <!-- injected by JS-->
+                </p>
+
+
+            </div>
+            <a href="cart.html" id="checkout-mini-btn">Checkout</a>
+
         </div>
+        <!-- /checkout list (Injected by JS)-->
+
         <!-- article images -->
         <div class="article-image-container">
             <div class="container1">
