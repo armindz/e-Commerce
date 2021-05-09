@@ -77,7 +77,7 @@ createArticle(2, "GUINNESS SHIRT", "SHIRT", "XL", "MALE", 5, 4, "Delight the Gui
 createArticle(3, "DRESS - CULT GAIA", "DRESS", "M", "FEMALE", 3, 9, "Keeping it cute and casual. Smock dress with a fill v-neckline for that extra feminine look. ", "YELLOW", true);
 createArticle(4, "CHEVRON CREW SHIRT", "SHIRT", "XL", "MALE", 5, 2, "Styled with on-trend panel detailing in a contrast black chevron design, this crew neck jumper is made from a soft brushback cotton blend for all-day comfort.", "YELLOW", true);
 createArticle(5, "CAMEL FAUX SUEDE JACKET", "JACKET", "M", "FEMALE", 89, 3, "Take the look into the warmer season with our faux suede rendition. In the classic biker shape with a silver zip front and zipped side pockets", "WHITE", false);
-createArticle(6, "LONG SLEEVE SHIRT", "SHIRT", "M", "MALE", 5, 3, "Lorem ipsum dolor, sit amet consectetur adipisicing", "GREEN", true);
+createArticle(0930647001, "RECYCLED POLYESTER PERFORMANCE PARKA", "SHIRT", "M", "FEMALE", 135, 3, "Lorem ipsum dolor, sit amet consectetur adipisicing", "GREEN", true);
 createArticle(7, "DRESS BALMAIN", "DRESS", "XL", "MALE", 240, 3, " it'll take you effortlessly into the spring and summer months ? just throw it on with your favourite trainers and you're good to go. ", "BLUE", true);
 createArticle(8, "SHIRT - RUSSIAN COLLAR", "SHIRT", "L", "MALE", 5, 2, "Lorem ipsum dolor, sit amet consectetur", "GREEN", true);
 createArticle(9, "OVERSIZED DIP BACK DRESS", "DRESS", "L", "FEMALE", 84, 2, "An oversized shirt dress featuring button through front and tie dye print with a dip back hem design", "BLUE", true);
@@ -89,7 +89,8 @@ createArticle(14, "US ATHLETIC BROOKLYN T-SHIRT", "T-SHIRT", "L", "MALE", 69, 2,
 createArticle(15, "APRIL RIPPED JEANS", "JEANS", "L", "FEMALE", 48, 2, "Designed to flatter your legs without compromising on comfort, these soft touch skinnies come in vintage wash denim with edgy ripped detailing. ", "GREY", true);
 createArticle(16, "REGATTA NAVY LAINE JACKET", "JACKET", "M", "FEMALE", 146, 2, "Regatta Navy Laine Jacket", "BLACK", false);
 handleCartList(0);
-
+handleCartList(2);
+handleCartList(4);
 
 
 
@@ -155,30 +156,48 @@ function viewArticle(id) {
 // mechanism for managing cart list
 function handleCartList(articleId) {
 
+
+
     if (cartArticles.length == 0) { // if empty
         addToCart(articleId);
         document.getElementById("article-submit-btn").innerHTML = "REMOVE";
-        console.log(cartArticles[0]);
+        cartPreviewMini();
     } else { // if list is not empty
-        for (let i = 0; i < cartArticles.length; i++) {
 
-            if (cartArticles[i].get_id() == articleId) { // if already contains article
+        if (isArticleInCart(articleId)) { // if already contains article
+            removeFromCart(articleId);
 
-                removeFromCart(articleId);
-                document.getElementById("article-submit-btn").innerHTML = '<img src="img/icon/cart1.png "><span>Add to cart</span>';
+            cartPreviewMini(); // make element visible
 
-            } else {
-                addToCart(articleId);
+            document.getElementById("article-submit-btn").innerHTML = '<span>Add to cart</span>';
+            return;
 
-                console.log(cartArticles.length);
-                document.getElementById("article-submit-btn").innerHTML = "REMOVE";
+        } else {
+            addToCart(articleId);
+            cartPreviewMini(); // make element visible
 
-            }
+            document.getElementById("article-submit-btn").innerHTML = "REMOVE";
+
+
         }
-
     }
+
 }
 
+
+
+function isArticleInCart(articleId) {
+
+    for (let i = 0; i < cartArticles.length; i++) {
+
+
+        if (cartArticles[i].get_id() == articleId) { // if already contains article
+            return true;
+
+        }
+    }
+    return false;
+}
 // add to cart by forwarding article id
 function addToCart(articleId) {
 
@@ -500,4 +519,50 @@ function cartPreview() { // dynamically display articles from cart list
     totalPrice.setAttribute("id", "total-price");
     totalPrice.innerHTML = totalAmount + CURRENCY_EURO;
     document.getElementById("checkout-cart").appendChild(totalPrice);
+}
+
+
+
+function makeMiniCartVisible() {
+    document.getElementById("checkout-mini").style.display = "block";
+}
+
+function cartPreviewMini() {
+
+    makeMiniCartVisible();
+
+
+    // clear earlier cart content 
+    elements = document.getElementsByClassName("card-article-card");
+    while (elements.length > 0) {
+        elements[0].remove();
+    }
+
+    // get new data from cart
+    for (let i = 0; i < cartArticles.length; i++) {
+        // article-card
+        let article = document.createElement("DIV");
+        article.setAttribute("class", "card-article-card");
+        article.setAttribute("data-id", cartArticles[i].get_id())
+        article.innerHTML = "<div id='card-article-image-container'>" +
+            "<img id='card-article-image' src='img/res/slika8.png'> </div>" +
+            " <div id='card-article-info'>" +
+            "<h5 id='article-card-name'>" + cartArticles[i].get_name() + "</h5>" +
+            "<div class='row'>" +
+            "<p id='article-card-amount'>1<span>x</span></p>" +
+            "<p id='article-card-price'>" + cartArticles[i].get_price() + CURRENCY_EURO + "</p> </div></div>";
+        document.getElementById("cart-article-cards-mini").appendChild(article);
+
+    }
+
+    // checkout total amount
+    let totalAmount = 0;
+    for (let j = 0; j < cartArticles.length; j++) {
+        totalAmount += cartArticles[j].get_price();
+    }
+
+
+    // total price value
+    document.getElementById("total-price").innerHTML = totalAmount;
+
 }
