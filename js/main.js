@@ -53,7 +53,7 @@ let Article = function(id, name, type, size, gender, price, quantity, text, extr
         return this.color;
     };
 
-    this.image = function() {
+    this.get_image = function() {
         return this.image;
     };
     this.get_isOnSale = function() {
@@ -79,31 +79,31 @@ let listOfArticles = [];
 let cartArticles = [];
 
 // use to test
-createArticle(0, "SPACE DYE POLO SHIRT", "T-SHIRT", "L", "MALE", 2, 1, "This polo is knitted in a soft cotton blend for cool comfort and detailed with three button fastenings at the collar. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "RED", true);
-createArticle(1, "SHORT SLEEVE T-SHIRT", "T-SHIRT", "M", "FEMALE", 33, 6, "Made from soft cotton for cool and breathable comfort on the warmest days, it's detailed with a Cuban collar and comes in a regular fit for a relaxed look and feel.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREY", true);
-createArticle(2, "GUINNESS SHIRT", "SHIRT", "XL", "MALE", 5, 4, "Delight the Guinness fan in your life with this classically cool tee - styled in soft grey cotton with a simple crew neckline, ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", false);
-createArticle(3, "DRESS - CULT GAIA", "DRESS", "M", "FEMALE", 3, 9, "Keeping it cute and casual. Smock dress with a fill v-neckline for that extra feminine look. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "YELLOW", true);
-createArticle(4, "CHEVRON CREW SHIRT", "SHIRT", "XL", "MALE", 5, 2, "Styled with on-trend panel detailing in a contrast black chevron design, this crew neck jumper is made from a soft brushback cotton blend for all-day comfort.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "YELLOW", true);
-createArticle(5, "CAMEL FAUX SUEDE JACKET", "JACKET", "M", "FEMALE", 89, 3, "Take the look into the warmer season with our faux suede rendition. In the classic biker shape with a silver zip front and zipped side pockets", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", false);
-createArticle(0930647001, "RECYCLED POLYESTER PERFORMANCE PARKA", "SHIRT", "M", "FEMALE", 135, 3, "Crafted from an organic cotton-mulberry silk mix, this oversized cardigan features a elasticated body and dropped shoulder. Effortlessly style with tonal shorts and pumps. \n\n - Relaxed fit \n - Dropped shoulder \n - Elasticated body \n - Ribbed cuff \n\n 32% PolyAmide, 29% Viscose, 23% Mulberry silk, 15% Organic cotton, 1% Elastane / Machine washable \n\n Back length of size XS/S is 70cm", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", true);
-createArticle(7, "DRESS BALMAIN", "DRESS", "XL", "MALE", 240, 3, " it'll take you effortlessly into the spring and summer months ? just throw it on with your favourite trainers and you're good to go. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLUE", true);
-createArticle(8, "SHIRT - RUSSIAN COLLAR", "SHIRT", "L", "MALE", 5, 2, "Lorem ipsum dolor, sit amet consectetur", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", true);
-createArticle(9, "OVERSIZED DIP BACK DRESS", "DRESS", "L", "FEMALE", 84, 2, "An oversized shirt dress featuring button through front and tie dye print with a dip back hem design", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLUE", true);
-createArticle(10, "STRAPPY CAMI BODYSUIT", "BODYSUIT", "L", "FEMALE", 51, 4, "Strappy cami bodysuit in a jersey fabric with popper fastening.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", false);
-createArticle(11, "BLACK POLKA DRESS", "SHIRT", "L", "FEMALE", 96, 2, "Black polka dot short sleeve ruched bust milkmaid style midi dress in a stretch crepe fabric.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLACK", true);
-createArticle(12, "NAVY BUTTON FRONT BLOUSE", "SHIRT", "L", "MALE", 43, 2, "Smart and simple, this timeless navy blouse ensures a polished finished. Styled with a collared button front, it's finished with turn-tab short sleeves for added elegance. Perfect for the office and formal dressing alike.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", false);
-createArticle(13, "KHAKI HARRINGTON JACKET", "JACKET", "XL", "MALE", 129, 2, "Put a smart new spin on your cold-weather essentials with our classic Harrington jacket. In khaki, it comes fully lined for extra warmth and features a showerproof finish to help you brave the wet weather in style.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", true);
-createArticle(14, "US ATHLETIC BROOKLYN T-SHIRT", "T-SHIRT", "L", "MALE", 69, 2, "These navy joggers come in a comfy cuffed fit with an elasticated drawstring waist and two handy side pockets for essential storage.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", false);
-createArticle(15, "APRIL RIPPED JEANS", "JEANS", "L", "FEMALE", 48, 2, "Designed to flatter your legs without compromising on comfort, these soft touch skinnies come in vintage wash denim with edgy ripped detailing. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREY", true);
-createArticle(16, "REGATTA NAVY LAINE JACKET", "JACKET", "M", "FEMALE", 146, 2, "Regatta Navy Laine Jacket", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLACK", false);
+createArticle(0, "SPACE DYE POLO SHIRT", "T-SHIRT", "L", "MALE", 2, 1, "This polo is knitted in a soft cotton blend for cool comfort and detailed with three button fastenings at the collar. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "RED", "img/res/slika8.png", true);
+createArticle(1, "SHORT SLEEVE T-SHIRT", "T-SHIRT", "M", "FEMALE", 33, 6, "Made from soft cotton for cool and breathable comfort on the warmest days, it's detailed with a Cuban collar and comes in a regular fit for a relaxed look and feel.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREY", "img/res/slika7.png", true);
+createArticle(2, "GUINNESS SHIRT", "SHIRT", "XL", "MALE", 5, 4, "Delight the Guinness fan in your life with this classically cool tee - styled in soft grey cotton with a simple crew neckline, ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", "img/res/slika9.png", false);
+createArticle(3, "DRESS - CULT GAIA", "DRESS", "M", "FEMALE", 3, 9, "Keeping it cute and casual. Smock dress with a fill v-neckline for that extra feminine look. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "YELLOW", "img/res/slika8.png", true);
+createArticle(4, "CHEVRON CREW SHIRT", "SHIRT", "XL", "MALE", 5, 2, "Styled with on-trend panel detailing in a contrast black chevron design, this crew neck jumper is made from a soft brushback cotton blend for all-day comfort.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "YELLOW", "img/res/slika7.png", true);
+createArticle(5, "CAMEL FAUX SUEDE JACKET", "JACKET", "M", "FEMALE", 89, 3, "Take the look into the warmer season with our faux suede rendition. In the classic biker shape with a silver zip front and zipped side pockets", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", "img/res/slika8.png", false);
+createArticle(0930647001, "RECYCLED POLYESTER PERFORMANCE PARKA", "SHIRT", "M", "FEMALE", 135, 3, "Crafted from an organic cotton-mulberry silk mix, this oversized cardigan features a elasticated body and dropped shoulder. Effortlessly style with tonal shorts and pumps. \n\n - Relaxed fit \n - Dropped shoulder \n - Elasticated body \n - Ribbed cuff \n\n 32% PolyAmide, 29% Viscose, 23% Mulberry silk, 15% Organic cotton, 1% Elastane / Machine washable \n\n Back length of size XS/S is 70cm", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", "img/res/slika10.png", true);
+createArticle(7, "DRESS BALMAIN", "DRESS", "XL", "MALE", 240, 3, " it'll take you effortlessly into the spring and summer months ? just throw it on with your favourite trainers and you're good to go. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLUE", "img/res/slika10.png", true);
+createArticle(8, "SHIRT - RUSSIAN COLLAR", "SHIRT", "L", "MALE", 5, 2, "Lorem ipsum dolor, sit amet consectetur", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", "img/res/slika8.png", true);
+createArticle(9, "OVERSIZED DIP BACK DRESS", "DRESS", "L", "FEMALE", 84, 2, "An oversized shirt dress featuring button through front and tie dye print with a dip back hem design", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLUE", "img/res/slika9.png", true);
+createArticle(10, "STRAPPY CAMI BODYSUIT", "BODYSUIT", "L", "FEMALE", 51, 4, "Strappy cami bodysuit in a jersey fabric with popper fastening.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", "img/res/slika3.png", false);
+createArticle(11, "BLACK POLKA DRESS", "SHIRT", "L", "FEMALE", 96, 2, "Black polka dot short sleeve ruched bust milkmaid style midi dress in a stretch crepe fabric.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLACK", "img/res/slika9.png", true);
+createArticle(12, "NAVY BUTTON FRONT BLOUSE", "SHIRT", "L", "MALE", 43, 2, "Smart and simple, this timeless navy blouse ensures a polished finished. Styled with a collared button front, it's finished with turn-tab short sleeves for added elegance. Perfect for the office and formal dressing alike.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", "img/res/slika4.png", false);
+createArticle(13, "KHAKI HARRINGTON JACKET", "JACKET", "XL", "MALE", 129, 2, "Put a smart new spin on your cold-weather essentials with our classic Harrington jacket. In khaki, it comes fully lined for extra warmth and features a showerproof finish to help you brave the wet weather in style.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREEN", "img/res/slika7.png", true);
+createArticle(14, "US ATHLETIC BROOKLYN T-SHIRT", "T-SHIRT", "L", "MALE", 69, 2, "These navy joggers come in a comfy cuffed fit with an elasticated drawstring waist and two handy side pockets for essential storage.", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "WHITE", "img/res/slika3.png", false);
+createArticle(15, "APRIL RIPPED JEANS", "JEANS", "L", "FEMALE", 48, 2, "Designed to flatter your legs without compromising on comfort, these soft touch skinnies come in vintage wash denim with edgy ripped detailing. ", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "GREY", "img/res/slika10.png", true);
+createArticle(16, "REGATTA NAVY LAINE JACKET", "JACKET", "M", "FEMALE", 146, 2, "Regatta Navy Laine Jacket", "32% Polyamide / 29% Viscose / 23% Silk / 15% Cotton / 1% Elastane / Machine washable \n\n Make sure that your favourite items remain long-loved pieces for years to come; read our product care guide and explore our selection of carefully chosen care products.\n", "BLACK", "img/res/slika10.png", false);
 addToCart(2);
 addToCart(5);
 
+console.log(listOfArticles);
 
+function createArticle(id, name, type, size, gender, price, quantity, text, extraText, color, image, isOnSale) { // mechanism used to create article with data forwarded
 
-function createArticle(id, name, type, size, gender, price, quantity, text, color, isOnSale) { // mechanism used to create article with data forwarded
-
-    let article = new Article(id, name, type, size, gender, price, quantity, text, color, isOnSale);
+    let article = new Article(id, name, type, size, gender, price, quantity, text, extraText, color, image, isOnSale);
     listOfArticles.push(article);
 }
 
@@ -250,7 +250,7 @@ function insertArticlesIntoWomen() { // diynamically insert articles into women 
                 ul.innerHTML += "<li>" +
                     "<img id='article-card' name=" +
                     genderList[i].get_id() +
-                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/slika7.png'>" +
+                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + CURRENCY_EURO + genderList[i].get_price() + "</p>" +
                     "</li>";
@@ -268,7 +268,7 @@ function insertArticlesIntoWomen() { // diynamically insert articles into women 
                 newUl.innerHTML += "<li>" +
                     "<img id='article-card' name=" +
                     genderList[i].get_id() +
-                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/slika7.png'>" +
+                    " onclick='viewArticle(" + genderList[i].get_id() + ")'src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + CURRENCY_EURO + genderList[i].get_price() + "</p>" +
                     "</li>";
@@ -307,7 +307,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 ul.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men4.jpg'>" +
+                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")' src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -323,7 +323,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 newUl.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='img/res/men4.jpg'>" +
+                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -362,7 +362,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 ul.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/slika10.png'>" +
+                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -378,7 +378,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 newUl.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='img/res/slika10.png'>" +
+                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -504,14 +504,15 @@ function cartPreview() { // dynamically display articles from cart list
     for (let i = 0; i < cartArticles.length; i++) {
         // article-card
         let article = document.createElement("DIV");
-        article.setAttribute("class", "card-article-card");
+        article.setAttribute("class", "cart-article-card");
         article.innerHTML = "<div id='card-article-image-container'>" +
-            "<img id='card-article-image' src='img/res/men-ac.jpg'> </div>" +
+            "<img id='card-article-image' src='" + cartArticles[i].get_image() + "'> </div>" +
             " <div id='card-article-info'>" +
             "<h5 id='article-card-name'>" + cartArticles[i].get_name() + "</h5>" +
             "<div class='row'>" +
-            "<p id='article-card-amount'>1<span>x</span></p>" +
-            "<p id='article-card-price'>" + cartArticles[i].get_price() + CURRENCY_EURO + "</p> </div></div>";
+            "<p id='article-card-price'>" + CURRENCY_EURO + cartArticles[i].get_price() +
+            "<span>x</span>" + "</p>" +
+            "<p id='article-card-amount'>1</p></div></div>";
         document.getElementById("cart-article-cards").appendChild(article);
 
     }
@@ -521,16 +522,14 @@ function cartPreview() { // dynamically display articles from cart list
     for (let j = 0; j < cartArticles.length; j++) {
         totalAmount += cartArticles[j].get_price();
     }
-    // label
-    let totalPriceLabel = document.createElement("P");
-    totalPriceLabel.innerHTML = "TOTAL: ";
-    document.getElementById("checkout-cart").appendChild(totalPriceLabel);
+
+
 
     // total price value
-    let totalPrice = document.createElement("P");
-    totalPrice.setAttribute("id", "total-price");
-    totalPrice.innerHTML = totalAmount + CURRENCY_EURO;
-    document.getElementById("checkout-cart").appendChild(totalPrice);
+
+    document.getElementById("subtotal").innerHTML = CURRENCY_EURO + totalAmount;
+    document.getElementById("taxes").innerHTML = CURRENCY_EURO + ARTICLE_TAX;
+    document.getElementById("total-price").innerHTML = CURRENCY_EURO + (totalAmount + ARTICLE_TAX);
 }
 
 
@@ -553,8 +552,8 @@ function cartPreviewMini() {
         let article = document.createElement("DIV");
         article.setAttribute("class", "card-article-card");
         article.setAttribute("data-id", cartArticles[i].get_id())
-        article.innerHTML = "<div id='card-article-image-container'>" +
-            "<img id='card-article-image' src='img/res/slika8.png'> </div>" +
+        article.innerHTML = "<div id='card-article-image-container-mini'>" +
+            "<img id='card-article-image' src='" + cartArticles[i].get_image() + "'> </div>" +
             " <div id='card-article-info'>" +
             "<h5 id='article-card-name'>" + cartArticles[i].get_name() + "</h5>" +
             "<div class='row'>" +

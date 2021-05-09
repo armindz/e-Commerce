@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>Cart - s'Wear</title>
-    <link rel="icon" type="image/x-icon" href="img/logo/s'WearRound.png">
+    <title>Cart - COS</title>
+    <link rel="icon" type="image/x-icon" href="img/logo/cos-rounded.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
@@ -58,6 +58,7 @@
 
         <div class="customer-info">
 
+            <img class="cart-logo" src="img/logo/cos-logo.png">
             <div class="section-buttons-cart">
 
                 <a href="#" onclick="showInformationSection()" id="section-info-btn">Information</a>
@@ -73,7 +74,7 @@
                 <div id="info-section">
 
                     <form id="info-section-form">
-                        <h3>Contact information</h3>
+                        <h3>Contact Information</h3>
                         <input type="email" id="customer-mail" placeholder="E-mail" name="customer-mail"></input>
 
                         <h3>Shipping address</h3>
@@ -81,20 +82,19 @@
                             <input type="text" id="customer-fname" placeholder="First Name"> </input>
                             <input type="text" id="customer-lname" placeholder="Last Name"> </input>
                         </div>
-                        <input type="text" id="customer-company" placeholder="Company"> </input>
+                        <input type="text" id="customer-company" placeholder="Company(optional)"> </input>
                         <input type="text" id="customer-address" placeholder="Address"> </input>
+                        <input type="text" id="customer-apartment" placeholder="Apartment, suite, etc. (optional)"> </input>
                         <div class="row">
 
                             <input type="text" id="customer-postal-code" placeholder="Postal Code"> </input>
                             <input type="text" id="customer-city" placeholder="City"> </input>
                         </div>
-
-
                         <input type="text" id="customer-country" placeholder="Country/Region"> </input>
                         <input type="tel" id="customer-phone" placeholder="Phone (optional)"> </input>
 
 
-                        <button type="button" onclick="showPaymentSection();" id="customer-info-submit">Next Step</button>
+                        <button type="button" onclick="showPaymentSection();" id="customer-info-submit">Continue to Payment</button>
 
                     </form>
                 </div>
@@ -106,7 +106,7 @@
 
                     <div class="row">
                         <a href="#" id="paypal-payment"><img src="img/icon/paypal_logo.webp"></a>
-                        <a href="#" id="stripe-payment"><img src="img/icon/stripe_logo.webp"></a>
+                        <a href="#" id="stripe-payment"><img src="img/icon/stripe_logo.png"></a>
                         <a href="#" id="apple-payment"><img src="img/icon/aPay_logo.webp"></a>
                         <a href="#" id="klarna-payment"><img src="img/icon/klarna_logo.png"></a>
                     </div>
@@ -127,8 +127,9 @@
                     </div>
                     <p id="order-data-country">Bosna and Herzegovina</p>
                     <p id="order-data-phone">+387 61</p>
-
-                    <button type="button" onclick="showOrderConfirmationMsg()" id="confirm-section-submit">Order</button>
+                    <div class="confirm-button-row">
+                        <button type="button" onclick="showOrderConfirmationMsg();" id="confirm-section-submit">Order</button>
+                    </div>
                 </div>
                 <!-- /confirm section-->
             </div>
@@ -136,27 +137,45 @@
             <!-- confirmation message -->
             <div id="order-confirmation-message">
                 <h3>Thank you for your order!</h3>
-                <p>The order will be processed within next 48 hours.</p>
+                <p style="font-size:12px">The order will be processed within next 48 hours.</p>
             </div>
             <!-- /confirmation message -->
         </div>
 
         <!-- checkout list (Injected by JS)-->
         <div class="customer-checkout">
-            <h3>Cart</h3>
+
             <div class="cart-articles" id="cart-article-cards">
+
                 <div class="cart-article-card">
+                    <h3>Cart</h3>
                     <!-- injected by JS-->
                 </div>
             </div>
 
             <div class="cart-checkout" id="checkout-cart">
+                <div class="subtotal-row">
 
-                <div id="total-price">
-
-
+                    <p style="font-size:15px;">Subtotal:</p>
+                    <p id="subtotal">
+                        <!-- injected by JS-->
+                    </p>
                 </div>
-                <!-- injected by JS-->
+
+                <div class="taxes-row">
+
+                    <p style="font-size:15px;">Taxes:</p>
+                    <p id="taxes">
+                        <!-- injected by JS-->
+                    </p>
+                </div>
+
+                <div class="total-row">
+                    <p style="font-size:20px;">Total:</p>
+                    <p id="total-price">
+                        <!-- injected by JS-->
+                    </p>
+                </div>
             </div>
 
             <!-- /checkout list (Injected by JS)-->
