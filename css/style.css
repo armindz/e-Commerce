@@ -26,7 +26,6 @@
         min-width: 1000px;
         max-width: 1444px;
      */
-                justify-content: center;
                 display: inline;
             }
             
@@ -289,7 +288,7 @@
             
             #image-bottom2 {
                 max-width: 600px;
-                height: 180px;
+                max-height: 180px;
             }
             
             #image-front2 {
@@ -704,7 +703,7 @@
             }
             
             #section-info-btn {
-                color: #333;
+                color: rgb(0, 0, 0);
             }
             
             .sections {
@@ -1113,6 +1112,12 @@
                 /* comes into effect for screens less than or equal to 320 pixels */
                 .homepageContainer {
                     display: inline;
+                }
+                .women-collection {
+                    float: none;
+                }
+                .men-collection {
+                    float: none;
                 }
                 .container {
                     display: inline;
