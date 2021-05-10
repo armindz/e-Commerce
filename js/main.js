@@ -307,7 +307,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 ul.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")' src='" + genderList[i].get_image() + "'>" +
+                    "<img id='article-card' onclick='viewArticle(" + genderList[i].get_id() + ")' src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -323,7 +323,7 @@ function insertArticlesIntoMen() { // diynamically insert articles into men sect
 
                 // insert card into row
                 newUl.innerHTML += "<li>" +
-                    "<img onclick='viewArticle(" + genderList[i].get_id() + ")'src='" + genderList[i].get_image() + "'>" +
+                    "<img id='article-card' onclick='viewArticle(" + genderList[i].get_id() + ")'src='" + genderList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + genderList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + genderList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -362,7 +362,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 ul.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
+                    "<img id='article-card' onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
@@ -378,7 +378,7 @@ function insertArticlesIntoSale() { // diynamically insert articles into sale se
 
                 // insert card into row
                 newUl.innerHTML += "<li id=" + articlesOnSaleList[i].get_id() + ">" +
-                    "<img onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
+                    "<img id='article-card' onclick='viewArticle(" + articlesOnSaleList[i].get_id() + ")' src='" + articlesOnSaleList[i].get_image() + "'>" +
                     "<p id='cardHeader'>" + articlesOnSaleList[i].get_name() + "</p>" +
                     "<p id='cardPrice'>" + articlesOnSaleList[i].get_price() + CURRENCY_EURO + "</p>" +
                     "</li>";
