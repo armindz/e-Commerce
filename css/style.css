@@ -17,21 +17,17 @@
                 top: 0%;
                 z-index: 99;
                 background-color: white;
-                /*    display: flex;
-        justify-content: center;*/
             }
+            /* ----------------------- NAVIGATION BAR ----------------------*/
             
             .navbar {
-                /*  position: absolute;
-        min-width: 1000px;
-        max-width: 1444px;
-     */
                 display: inline;
             }
             
             .activePage {
                 border-bottom: 1px #888 inset;
             }
+            /* navbar logo */
             
             .logoContainer {
                 position: relative;
@@ -53,6 +49,8 @@
                 transform: scale(1.05);
                 transition: 50ms ease-in;
             }
+            /* navbar logo */
+            /* left navbar links */
             
             .navbarLinks {
                 position: relative;
@@ -100,20 +98,8 @@
                 opacity: 0.5;
                 transition: 50ms ease-in;
             }
-            
-            #loginBtn {
-                width: 18px;
-                height: 18px;
-            }
-            
-            #loginBtn img {
-                width: 18px;
-                height: 18px;
-            }
-            
-            #loginBtn img:hover {
-                opacity: 0.7;
-            }
+            /* /left navbar links */
+            /* right navbar links */
             
             .navbarFunctions {
                 position: relative;
@@ -151,15 +137,66 @@
                 color: black;
                 font-size: 14px;
             }
+            /* /right navbar links */
+            /* -------------- MINI NAVBAR ----------- */
+            /* Style the navigation menu */
             
-            #navbarCart img:hover {
-                opacity: 0.7;
+            .topnav {
+                overflow: hidden;
+                background-color: rgb(255, 255, 255);
+                position: relative;
+            }
+            /* Hide the links inside the navigation menu (except for logo/home) */
+            
+            .topnav #navbar-mini-links {
+                display: none;
+            }
+            /* Style navigation menu links */
+            
+            .topnav #navbar-mini-links a {
+                color: black;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
             }
             
-            #navbarCart img {
-                width: 20px;
-                height: 20px;
+            .topnav a {
+                color: black;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                display: block;
             }
+            
+            #logo-mini {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px auto;
+            }
+            
+            #logo-mini img {
+                width: 50px;
+                height: auto;
+            }
+            /* Style the hamburger menu */
+            
+            .topnav a.icon {
+                background: rgb(255, 255, 255);
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            
+            .icon img {
+                width: 30px;
+                height: auto;
+                cursor: pointer;
+            }
+            /* --------------/ MINI NAVBAR ----------- */
+            /* ------------------------ /NAVIGATION BAR ---------------------- */
+            /* ------------------------ FOOTER --------------------------- */
             
             footer {
                 bottom: 0%;
@@ -179,6 +216,8 @@
                 font-family: Inter;
                 color: #D2D6D4;
             }
+            /* ------------------------ FOOTER --------------------------- */
+            /* ----------------------- HOMEPAGE -------------------------- */
             
             .homepageContainer {
                 display: flex;
@@ -188,6 +227,7 @@
                 padding: 0;
                 margin: 0 auto;
             }
+            /* women collection */
             
             .women-collection {
                 float: left;
@@ -237,6 +277,8 @@
                 font-weight: 600;
                 font-size: 14px;
             }
+            /* /women collection */
+            /* men collection */
             
             .men-collection {
                 float: right;
@@ -278,10 +320,12 @@
                 grid-column: -4/1;
                 grid-row: 4/6;
             }
+            /* /men collection */
             
             .clearFix {
                 float: none;
             }
+            /* women-men img links bottom */
             
             .container2 {
                 width: 95%;
@@ -321,6 +365,9 @@
                 grid-row: 3;
                 margin-top: 30px;
             }
+            /* /women-men img links bottom */
+            /* ----------------------- /HOMEPAGE -------------------------- */
+            /* ------------------------- COLLECTIONS WOMEN MEN SALE  --------------------------- */
             
             .container {
                 width: 99%;
@@ -329,10 +376,9 @@
                 justify-content: center;
                 margin: 0 auto;
                 margin-top: -100px;
-                /*
-        margin-bottom: 100px; */
                 padding: 50px;
             }
+            /* zigzag row */
             
             .zigzag-row {
                 width: 95%;
@@ -345,7 +391,6 @@
             }
             
             .zigzag-row img {
-                /*   width: 100%; */
                 max-width: 230px;
                 max-height: 90%;
                 cursor: pointer;
@@ -375,6 +420,12 @@
                 margin: -100px 5px;
             }
             
+            .zigzag-row img:hover {
+                opacity: 0.9;
+                transform: scale(1.01);
+            }
+            /* /zigzag row */
+            
             #sectionHeader {
                 text-align: center;
                 font-family: Inter;
@@ -402,12 +453,9 @@
                 font-weight: 600;
                 color: rgb(146, 146, 146)
             }
-            
-            .zigzag-row img:hover {
-                opacity: 0.9;
-                transform: scale(1.01);
-            }
+            /* ------------------------- /COLLECTIONS WOMEN MEN SALE  --------------------------- */
             /* ---------------- ARTICLE CONTAINER ------------ */
+            /* THUMBNAIL IMG */
             
             .article-image-container {
                 position: relative;
@@ -420,102 +468,6 @@
                 margin: 0 5px;
                 padding: 5px;
             }
-            
-            .article-info-container {
-                float: right;
-                width: 50%;
-                min-width: 200px;
-                max-width: 400px;
-                height: 700px;
-                /*  margin: 0 auto; */
-                padding: 5px;
-                margin: 0 5px;
-            }
-            
-            .article-info-container #article-title {
-                text-align: left;
-                font-family: Lato;
-                font-weight: 900;
-                text-transform: uppercase;
-                margin-top: 20px;
-            }
-            
-            .article-info-container #article-price {
-                font-family: Lato;
-                color: rgb(126, 124, 124);
-                margin-bottom: 50px;
-            }
-            
-            .article-info-container #article-details {
-                max-width: 400px;
-                max-height: 230px;
-                font-family: Lato;
-                font-weight: 600;
-                font-size: 14px;
-                font-size: fit-width;
-                margin-bottom: 80px;
-                white-space: pre-wrap;
-            }
-            
-            .article-cart-form {
-                font-family: Inter;
-                max-width: 400px;
-                font-weight: 600;
-                color: rgb(163, 161, 161);
-                display: flex;
-                /* flex-direction: column; */
-            }
-            
-            .article-cart-form #article-amount {
-                width: 50px;
-                height: 50px;
-                margin-right: 25px;
-                border-radius: 6px;
-                outline-style: none;
-            }
-            
-            .article-cart-form #article-amount-label {
-                padding: 15px;
-                float: left;
-            }
-            
-            .article-cart-form #article-submit-btn {
-                width: 315px;
-                height: 48px;
-                border: none;
-                font-family: Inter;
-                font-weight: 400;
-                z-index: 1;
-                font-size: 20px;
-                color: rgb(216, 216, 216);
-                background-color: #595959;
-            }
-            
-            #article-submit-btn:hover {
-                opacity: 0.9;
-                cursor: pointer;
-            }
-            
-            .article-id-info {
-                font-family: Lato;
-                font-weight: 600;
-            }
-            
-            .article-id-info label {
-                margin-right: 3px;
-            }
-            
-            #article-extra-details {
-                max-width: 400px;
-                max-height: 230px;
-                font-family: Lato;
-                font-weight: 600;
-                font-size: 14px;
-                font-size: fit-width;
-                margin-top: 50px;
-                white-space: pre-wrap;
-            }
-            /* THUMBNAIL IMG */
             
             .container1 {
                 position: absolute;
@@ -569,6 +521,104 @@
                 object-fit: cover;
                 /* crop image to fit */
             }
+            /* / thumbnail */
+            /* article info */
+            
+            .article-info-container {
+                float: right;
+                width: 50%;
+                min-width: 200px;
+                max-width: 400px;
+                height: 700px;
+                /*  margin: 0 auto; */
+                padding: 5px;
+                margin: 0 5px;
+            }
+            
+            .article-info-container #article-title {
+                text-align: left;
+                font-family: Lato;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin-top: 20px;
+            }
+            
+            .article-info-container #article-price {
+                font-family: Lato;
+                color: rgb(126, 124, 124);
+                margin-bottom: 50px;
+            }
+            
+            .article-info-container #article-details {
+                max-width: 400px;
+                max-height: 230px;
+                font-family: Lato;
+                font-weight: 600;
+                font-size: 14px;
+                font-size: fit-width;
+                margin-bottom: 80px;
+                white-space: pre-wrap;
+            }
+            
+            .article-cart-form {
+                font-family: Inter;
+                max-width: 400px;
+                font-weight: 600;
+                color: rgb(163, 161, 161);
+                display: flex;
+            }
+            
+            .article-cart-form #article-amount {
+                width: 50px;
+                height: 50px;
+                margin-right: 25px;
+                border-radius: 6px;
+                outline-style: none;
+            }
+            
+            .article-cart-form #article-amount-label {
+                padding: 15px;
+                float: left;
+            }
+            
+            .article-cart-form #article-submit-btn {
+                width: 315px;
+                height: 48px;
+                border: none;
+                font-family: Inter;
+                font-weight: 400;
+                z-index: 1;
+                font-size: 20px;
+                color: rgb(216, 216, 216);
+                background-color: #595959;
+            }
+            
+            #article-submit-btn:hover {
+                opacity: 0.9;
+                cursor: pointer;
+            }
+            
+            .article-id-info {
+                font-family: Lato;
+                font-weight: 600;
+            }
+            
+            .article-id-info label {
+                margin-right: 3px;
+            }
+            
+            #article-extra-details {
+                max-width: 400px;
+                max-height: 230px;
+                font-family: Lato;
+                font-weight: 600;
+                font-size: 14px;
+                font-size: fit-width;
+                margin-top: 50px;
+                white-space: pre-wrap;
+            }
+            /* article info */
+            /* recommender in article.html */
             
             .recommender-container {
                 position: relative;
@@ -627,6 +677,8 @@
             .recommender-card #cardHeader {
                 margin-top: 15px;
             }
+            /* recommender in article.html */
+            /* mini checkout on add to cart button press */
             
             .customer-checkout-mini {
                 display: none;
@@ -672,6 +724,7 @@
                 float: left;
                 display: inline;
             }
+            /* mini checkout on add to cart button press */
             /* --------- END OF ARTICLE CONTAINER ------- */
             /* --------------- CART CONTAINER ----------- */
             
@@ -732,6 +785,7 @@
                 padding: 10px 2px;
                 align-items: center;
             }
+            /* input form section */
             
             #info-section {
                 /*display: flex;*/
@@ -809,6 +863,8 @@
                 opacity: 0.9;
                 cursor: pointer;
             }
+            /* input form section */
+            /* payment section */
             
             #payment-section {
                 /* display: */
@@ -858,6 +914,8 @@
             #payment-section a {
                 margin: 10px auto;
             }
+            /* payment section */
+            /*confirm section */
             
             #confirm-section {
                 width: 100%;
@@ -889,6 +947,8 @@
                 height: 50px;
                 float: right;
             }
+            /*confirm section */
+            /* order confirmation */
             
             #order-confirmation-message {
                 display: none;
@@ -898,6 +958,7 @@
                 color: black;
                 padding: 70px;
             }
+            /* order confirmation */
             /* ------------ /customer info ------------ */
             /* ------------ customer checkout --------- */
             
@@ -910,6 +971,7 @@
                 background-color: white;
                 margin-top: -10px;
             }
+            /* button to minimize cart */
             
             #minimize-mini-cart {
                 width: 100%;
@@ -920,6 +982,7 @@
                 text-align: right;
                 cursor: pointer;
             }
+            /* /button to minimize cart */
             
             .customer-checkout h3 {
                 display: flex;
@@ -1030,6 +1093,7 @@
             .cart-checkout #total-price {
                 text-align: right;
             }
+            /* subtotal */
             
             .subtotal-row {
                 display: flex;
@@ -1042,6 +1106,8 @@
                 color: #999999;
                 font-size: 14px;
             }
+            /* /subtotal */
+            /* taxes */
             
             .taxes-row {
                 display: flex;
@@ -1064,6 +1130,8 @@
                 color: #999999;
                 font-size: 15px;
             }
+            /* /taxes */
+            /* total */
             
             .total-row {
                 display: flex;
@@ -1085,6 +1153,7 @@
                 font-size: 20px;
                 font-weight: 600;
             }
+            /* /total */
             
             .cart-checkout #taxes {
                 text-align: right;
@@ -1123,8 +1192,29 @@
                 color: rgb(122, 122, 122);
             }
             
+            .navbarFunctions li a {
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            #cartItemsNum {
+                background-color: #4F4F4F;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                border-radius: 100%;
+                width: 13px;
+                height: 13px;
+                margin-bottom: 20px;
+                font-size: 8px;
+                font-family: Inter;
+            }
+            
             @media screen and (max-width: 1200px) {
-                /* comes into effect for screens less than or equal to 320 pixels */
+                /* comes into effect for screens less than or equal to 1200 pixels */
                 .homepageContainer {
                     display: inline;
                 }
@@ -1193,25 +1283,7 @@
                     margin: 0 auto;
                     width: 100%;
                 }
-            }
-            
-            .navbarFunctions li a {
-                height: 70px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            #cartItemsNum {
-                background-color: #4F4F4F;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                border-radius: 100%;
-                width: 13px;
-                height: 13px;
-                margin-bottom: 20px;
-                font-size: 8px;
-                font-family: Inter;
+                .navbar {
+                    display: none;
+                }
             }

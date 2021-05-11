@@ -597,3 +597,13 @@ function viewCartItemsNumber() {
 
     document.getElementById("cartItemsNum").innerHTML = cartArticles.length;
 }
+
+
+function showHamburgerMenu() {
+    var x = document.getElementById("navbar-mini-links");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
