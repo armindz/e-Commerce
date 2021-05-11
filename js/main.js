@@ -397,6 +397,7 @@ function showInformationSection() { // change dom in order section (show/hide fo
     document.getElementById("info-section").style.display = "flex";
     document.getElementById("payment-section").style.display = "none";
     document.getElementById("confirm-section").style.display = "none";
+    document.getElementById("order-confirmation-message").style.display = "none";
 
     document.getElementById("section-info-btn").style.color = "black";
     document.getElementById("section-payment-btn").style.color = "rgb(180, 179, 179)";
@@ -408,6 +409,7 @@ function showPaymentSection() { // change dom in order section (show/hide forms)
     document.getElementById("payment-section").style.display = "initial";
     document.getElementById("info-section").style.display = "none";
     document.getElementById("confirm-section").style.display = "none";
+    document.getElementById("order-confirmation-message").style.display = "none";
 
     document.getElementById("section-payment-btn").style.color = "black";
     document.getElementById("section-confirm-btn").style.color = "rgb(180, 179, 179)";
@@ -419,6 +421,7 @@ function showConfirmSection() { // change dom in order section (show/hide forms)
     document.getElementById("confirm-section").style.display = "flex";
     document.getElementById("info-section").style.display = "none";
     document.getElementById("payment-section").style.display = "none";
+    document.getElementById("order-confirmation-message").style.display = "none";
 
     document.getElementById("section-confirm-btn").style.color = "black";
     document.getElementById("section-payment-btn").style.color = "rgb(180, 179, 179)";
