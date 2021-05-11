@@ -69,6 +69,15 @@
                 margin: 15px 0px;
                 padding: 0;
                 text-align: left;
+                display: flex;
+                align-items: center;
+                height: 70px;
+            }
+            
+            .navbarLinks li {
+                display: flex;
+                height: 70px;
+                align-items: center;
             }
             
             li {
@@ -120,11 +129,17 @@
                 list-style-type: none;
                 padding: 0;
                 text-align: right;
+                height: 70px;
+                display: flex;
+                align-items: center;
             }
             
             .navbarFunctions li {
                 display: inline;
                 float: left;
+                height: 70px;
+                display: flex;
+                align-items: center;
             }
             
             .navbarFunctions li a {
@@ -1178,4 +1193,25 @@
                     margin: 0 auto;
                     width: 100%;
                 }
+            }
+            
+            .navbarFunctions li a {
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            #cartItemsNum {
+                background-color: #4F4F4F;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                border-radius: 100%;
+                width: 13px;
+                height: 13px;
+                margin-bottom: 20px;
+                font-size: 8px;
+                font-family: Inter;
             }

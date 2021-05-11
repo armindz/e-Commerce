@@ -12,7 +12,7 @@
 </head>
 
 
-<body onload="insertArticlesIntoMen()">
+<body onload="insertArticlesIntoMen(); viewCartItemsNumber();">
 
     <!-- ------------------------ HEADER ----------------------- -->
     <header>
@@ -40,10 +40,10 @@
                         <a href="contact.html"> Contact </a>
                     </li>
                     <li>
-                        <a href="login.html"> Sign In </a>
+                        <a href="#"> Sign In </a>
                     </li>
                     <li>
-                        <a href="cart.html"> Cart </a>
+                        <a href="cart.html"><span id="cartItemsNum"></span> Cart </a>
                     </li>
                 </ul>
             </div>

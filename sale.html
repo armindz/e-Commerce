@@ -11,7 +11,7 @@
     <script src="js/main.js"></script>
 </head>
 
-<body onload="insertArticlesIntoSale()">
+<body onload="insertArticlesIntoSale(); viewCartItemsNumber();">
     <!-- ------------------------ HEADER ----------------------- -->
     <header>
         <div class="navbar">
@@ -38,10 +38,10 @@
                         <a href="contact.html"> Contact </a>
                     </li>
                     <li>
-                        <a href="login.html"> Sign In </a>
+                        <a href="#"> Sign In </a>
                     </li>
                     <li>
-                        <a href="cart.html"> Cart </a>
+                        <a href="cart.html"><span id="cartItemsNum"></span> Cart </a>
                     </li>
                 </ul>
             </div>
