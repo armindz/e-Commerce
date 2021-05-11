@@ -1273,14 +1273,19 @@
                     display: inline;
                 }
                 .container-cart {
-                    display: inline;
-                    padding: 100px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin-top: 70px;
                 }
                 #info-section-form input {
                     margin: 10px 0px;
                 }
-                .customer-checkout {
+                .customer-info {
                     margin: 0 auto;
+                }
+                .customer-checkout {
+                    margin: 100px auto;
                     width: 100%;
                 }
                 .navbar {
