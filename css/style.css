@@ -521,6 +521,17 @@
                                 object-fit: cover;
                                 /* crop image to fit */
                             }
+                            
+                            a:focus .big {
+                                float: none;
+                                top: -20px;
+                                right: 34%;
+                                width: 550px;
+                                max-height: 610px;
+                                z-index: 2;
+                                object-fit: cover;
+                                /* crop image to fit */
+                            }
                             /* / thumbnail */
                             /* article info */
                             
