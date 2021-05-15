@@ -136,6 +136,25 @@
                                                 font-weight: 600;
                                                 color: black;
                                                 font-size: 14px;
+                                                height: 70px;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                            }
+                                            /* number of items in chart displayed in header */
+                                            
+                                            #cartItemsNum {
+                                                background-color: #4F4F4F;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                color: white;
+                                                border-radius: 100%;
+                                                width: 13px;
+                                                height: 13px;
+                                                margin-bottom: 20px;
+                                                font-size: 8px;
+                                                font-family: Inter;
                                             }
                                             /* /right navbar links */
                                             /* -------------- MINI NAVBAR ----------- */
@@ -217,7 +236,7 @@
                                                 color: #D2D6D4;
                                             }
                                             /* ------------------------ FOOTER --------------------------- */
-                                            /* ----------------------- HOMEPAGE -------------------------- */
+                                            /* ----------------------- HOMEPAGE (index.html)------------------- */
                                             
                                             .homepageContainer {
                                                 display: flex;
@@ -367,7 +386,7 @@
                                             }
                                             /* /women-men img links bottom */
                                             /* ----------------------- /HOMEPAGE -------------------------- */
-                                            /* ------------------------- COLLECTIONS WOMEN MEN SALE  --------------------------- */
+                                            /* --------- COLLECTIONS WOMEN MEN SALE (women.html, men.html, sale.html)--------- */
                                             
                                             .container {
                                                 width: 99%;
@@ -454,7 +473,7 @@
                                                 color: rgb(146, 146, 146)
                                             }
                                             /* ------------------------- /COLLECTIONS WOMEN MEN SALE  --------------------------- */
-                                            /* ---------------- ARTICLE CONTAINER ------------ */
+                                            /* ---------------- ARTICLE CONTAINER (article.hmtl) ------------ */
                                             /* THUMBNAIL IMG */
                                             
                                             .article-image-container {
@@ -735,9 +754,21 @@
                                                 float: left;
                                                 display: inline;
                                             }
+                                            /* button to minimize cart */
+                                            
+                                            #minimize-mini-cart {
+                                                width: 100%;
+                                                color: lavender;
+                                                background: none;
+                                                outline: none;
+                                                border: none;
+                                                text-align: right;
+                                                cursor: pointer;
+                                            }
+                                            /* /button to minimize cart */
                                             /* mini checkout on add to cart button press */
                                             /* --------- END OF ARTICLE CONTAINER ------- */
-                                            /* --------------- CART CONTAINER ----------- */
+                                            /* --------------- CART CONTAINER (cart.html) ----------- */
                                             
                                             .container-cart {
                                                 width: 100%;
@@ -799,7 +830,6 @@
                                             /* input form section */
                                             
                                             #info-section {
-                                                /*display: flex;*/
                                                 display: flex;
                                                 justify-content: center;
                                                 align-items: center;
@@ -814,6 +844,7 @@
                                                 font-family: Inter;
                                                 font-weight: 900;
                                             }
+                                            /* info form */
                                             
                                             #customer-mail,
                                             #customer-fname,
@@ -836,16 +867,19 @@
                                                 outline-color: rgb(163, 163, 163);
                                                 padding-left: 8px;
                                             }
+                                            /* forms in one row */
                                             
                                             #customer-city,
                                             #customer-lname {
                                                 margin-left: 10px;
                                             }
+                                            /* forms in one row */
                                             
                                             #customer-postal-code,
                                             #customer-fname {
                                                 margin-right: 10px;
                                             }
+                                            /* submit buttons in sections */
                                             
                                             #info-section-form #customer-info-submit,
                                             #payment-section-submit,
@@ -874,11 +908,10 @@
                                                 opacity: 0.9;
                                                 cursor: pointer;
                                             }
-                                            /* input form section */
+                                            /* /input form section */
                                             /* payment section */
                                             
                                             #payment-section {
-                                                /* display: */
                                                 display: none;
                                                 width: 100%;
                                                 max-width: 800px;
@@ -902,6 +935,7 @@
                                                 height: auto;
                                                 background-color: white;
                                             }
+                                            /* payment service logo */
                                             
                                             #payment-section #paypal-payment,
                                             #payment-section #stripe-payment,
@@ -925,7 +959,7 @@
                                             #payment-section a {
                                                 margin: 10px auto;
                                             }
-                                            /* payment section */
+                                            /* /payment section */
                                             /*confirm section */
                                             
                                             #confirm-section {
@@ -934,14 +968,6 @@
                                                 flex-direction: column;
                                                 max-width: 800px;
                                                 min-width: 400px;
-                                            }
-                                            
-                                            #confirm-section p {
-                                                font-family: Inter;
-                                                color: #4F4F4F;
-                                                font-weight: 600;
-                                                font-size: 12px;
-                                                margin-top: 8px;
                                             }
                                             
                                             #confirm-section h3 {
@@ -953,12 +979,20 @@
                                                 font-size: 20px;
                                             }
                                             
+                                            #confirm-section p {
+                                                font-family: Inter;
+                                                color: #4F4F4F;
+                                                font-weight: 600;
+                                                font-size: 12px;
+                                                margin-top: 8px;
+                                            }
+                                            
                                             #confirm-section-submit {
                                                 width: 300px;
                                                 height: 50px;
                                                 float: right;
                                             }
-                                            /*confirm section */
+                                            /* /confirm section */
                                             /* order confirmation */
                                             
                                             #order-confirmation-message {
@@ -971,7 +1005,7 @@
                                             }
                                             /* order confirmation */
                                             /* ------------ /customer info ------------ */
-                                            /* ------------ customer checkout --------- */
+                                            /* ------------ customer checkout on right side of the page --------- */
                                             
                                             .customer-checkout {
                                                 min-width: 300px;
@@ -982,18 +1016,6 @@
                                                 background-color: white;
                                                 margin-top: -10px;
                                             }
-                                            /* button to minimize cart */
-                                            
-                                            #minimize-mini-cart {
-                                                width: 100%;
-                                                color: lavender;
-                                                background: none;
-                                                outline: none;
-                                                border: none;
-                                                text-align: right;
-                                                cursor: pointer;
-                                            }
-                                            /* /button to minimize cart */
                                             
                                             .customer-checkout h3 {
                                                 display: flex;
@@ -1192,40 +1214,23 @@
                                                 opacity: 0.9;
                                             }
                                             /* ------------ end of customer checkout -------- */
+                                            /* row property */
                                             
                                             .row {
                                                 display: flex;
                                                 flex-direction: row;
                                                 width: 100%;
                                             }
+                                            /* input form placeholder property */
                                             
                                              ::placeholder {
                                                 color: rgb(122, 122, 122);
                                             }
-                                            
-                                            .navbarFunctions li a {
-                                                height: 70px;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                            }
-                                            
-                                            #cartItemsNum {
-                                                background-color: #4F4F4F;
-                                                display: flex;
-                                                justify-content: center;
-                                                align-items: center;
-                                                color: white;
-                                                border-radius: 100%;
-                                                width: 13px;
-                                                height: 13px;
-                                                margin-bottom: 20px;
-                                                font-size: 8px;
-                                                font-family: Inter;
-                                            }
+                                            /* MEDIA SCREEN FOR DEVICES BELOW 1200px */
                                             
                                             @media screen and (max-width: 1200px) {
                                                 /* comes into effect for screens less than or equal to 1200 pixels */
+                                                /* align items vertically */
                                                 .homepageContainer {
                                                     display: flex;
                                                     justify-content: center;
@@ -1403,6 +1408,8 @@
                                                     margin: 20px auto;
                                                 }
                                             }
+                                            /* MEDIA SCREEN FOR DEVICES BELOW 660px */
+                                            /* align items vertically */
                                             
                                             @media screen and (max-width: 660px) {
                                                 .women-collection {
@@ -1513,7 +1520,6 @@
                                                     max-width: 500px;
                                                     display: flex;
                                                     flex-direction: column;
-                                                    /*  padding: 50px 0px 0px 80px;*/
                                                     margin: 0 auto;
                                                     float: none;
                                                     height: auto;
